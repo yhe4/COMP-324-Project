@@ -1,0 +1,152 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.header{
+  display: flex;
+}
+
+.nav-bar{
+  display: flex;
+  height: 50px;
+  margin-top: 1%;
+  list-style-type: none;
+  cursor: pointer;
+}
+
+.book-icon{
+  height: 120px;
+  min-width: 100%;
+  border:none;
+  cursor: pointer;
+  float: left;
+  margin-top: 0;
+}
+
+/* styling logo & home button */
+.home-icon {
+  height: 48px;
+  min-width: 123px;
+  align-items: center;
+  justify-content: center;
+  border:none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size:16px;
+
+}
+
+.home-icon:hover{
+  background-color: #00b4cc0b;
+}
+
+/* styling search bar */
+.search-box{
+  background: #efefef;
+  display: flex;
+  flex-grow: 1;
+  flex-shrink: 0;
+  flex-basis: 260px;
+  margin-right: 20px;
+  margin-left: 20px;
+  height: 48px;
+  border-radius: 50px;
+  border: none;
+  
+}
+  
+
+.search-input {
+  background-color: transparent;
+  border:none;
+  display: flex;
+  flex-grow: 2;
+  background: none;
+  width:100%;
+  margin-left: 5px;
+  font-size:16px;
+  border-radius: 50px;
+}
+
+
+.search-button {
+    width: 40px;
+    height: 100%;
+    border: 1px solid #00B4CC;
+    background: #00B4CC;
+    text-align: center;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+.nav-buttons{
+  margin-left: 400px;
+  margin-right: 10px;
+}
+
+/* styling login & favorites button */
+.login-button {
+  height: 48px;
+  min-width: 123px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 20px;
+  border:none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size:16px;
+
+}
+
+.login-button:hover{
+  background-color: #00b4cc0b;
+}
+
+.favorites-button {
+  height: 48px;
+  min-width: 123px;
+  align-items: center;
+  justify-content: center;
+  border:none;
+  border-radius: 24px;
+  cursor: pointer;
+  font-size:16px;
+
+}
+
+.favorites-button:hover{
+  background-color: #00b4cc0b;
+}
+
+
+.column {
+  float: left;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.right {
+  width: 20%;
+  box-sizing: border-box;
+}
+.left {
+  width: 10%;
+  box-sizing: border-box;
+}
+
+.middle {
+  width: 80%;
+  box-sizing: border-box;
+}
+
+.logo{
+  box-sizing: border-box;
+  width: 100px;
+  height: 100px;
+}
