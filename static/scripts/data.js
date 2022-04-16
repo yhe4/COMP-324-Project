@@ -26,14 +26,14 @@ function SearchBooks(currPage) {
         xmlhttp.onreadystatechange = function() {
             if (this.readyState == 4 && this.status == 200) {               //anonymous function: when request is made + response is returned and if http return status is successful
                 var data = JSON.parse(this.responseText);                  //then take returned JSON data, parse and store in object 
-                showContent(currPage, data);                                         //pass object containing parsed JSON response to showContent function 
+                showContent(currPage, data, Index);                                         //pass object containing parsed JSON response to showContent function 
             }
         };
     }
 }
 
 
-function showContent(currPage,data) {
+function showContent(currPage,data, Index) {
 
     let divContainer = document.getElementById("showData");                        //access showData element from document  
     let divSearchResults = document.getElementById("searchResultsText");           //access searchResultsText element document 
@@ -42,7 +42,7 @@ function showContent(currPage,data) {
 
     if (data.items.length > 0)                                                    //check to see if response object contains any response aka books 
     {
-        divSearchResults.innerHTML=`A total of <b>${data.totalItems}</b> results have been found with the keyword <b>${qsearch}</b>"`; //display number of results returned, total items is sent back to current document 
+        divSearchResults.innerHTML=`Showing ${Index + 1} - ${Index + 20} of ${data.totalItems} results for <b>${qsearch}</b>`; //display number of results returned, total items is sent back to current document 
         data.items.forEach(function(element) {                                                    //for every item (book) in response object (for loop)
 
         let temp = document.getElementsByTagName("template")[0];                                  

@@ -4,7 +4,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Muli', sans-serif;
+  font-family:  'Muli', sans-serif;
 }
 
 .header{
@@ -144,6 +144,14 @@
 }
 /* -------------------------------------------------------- */
 
+
+/* ----------- styling search results message ----------- */
+.search-results-message{
+  margin-top:10px;
+  padding-left: 245px;
+  font-size:12px;
+}
+/* -------------------------------------------------------- */
 
 /* ----------- styling pagination ----------- */
 .pagination-buttons{
