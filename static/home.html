@@ -39,23 +39,23 @@
     </div>
 </header>
 
-<div id="searchResultsText"></div>
-
-<p id="showData"></p>
+<div id="searchResultsText" class="searchResultsMsg"></div>
+<div id="showData" class="wrap"></div>
+<div id="pagination" class="pagination-buttons"></div>
 
 <template>
-  <table width="60%">
-    <tr>
-    <td width="180px"><img id="thumbnail" height="150px" width="150px" ></img></td>
-    <td align="left">
-      <div id="title"></div>
-      <div id="authors"></div>
-      <div id="publisher"></div>
-      <div id="publisheddate"></div>
-    </td>
-    <td></td>
-    </tr>
-    </table>
+    <div class="booktitles">
+		<div class="entry">
+  			<img id="thumbnail" width="200px" height="250px" class="bookcover" >
+              <p>
+                <br/>
+                 <span id="title" class="bookdetail"></span>
+                 <span id="authors" class="bookdetail"></span>
+                 <span id="publisher" class="bookdetail"></span>
+                 <span id="publisheddate"class="bookdetail"></span>
+               </p>  
+  		</div>
+	</div>
 </template>
   
 
