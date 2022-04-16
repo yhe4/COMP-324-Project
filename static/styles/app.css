@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?Muli&display=swap');
+
 *{
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Muli', sans-serif;
 }
 
 .header{
@@ -43,6 +45,7 @@
   border-radius: 24px;
   cursor: pointer;
   font-size:16px;
+  transition: background 0.3s ease;
 
 }
 
@@ -113,6 +116,7 @@
   border-radius: 24px;
   cursor: pointer;
   font-size:16px;
+  transition: background 0.3s ease;
 
 }
 
@@ -131,12 +135,60 @@
   border-radius: 24px;
   cursor: pointer;
   font-size:16px;
+  transition: background 0.3s ease;
 
 }
 
 .favorites-button:hover{
   background-color: #00B4CC;
 }
+/* -------------------------------------------------------- */
+
+
+/* ----------- styling pagination ----------- */
+.pagination-buttons{
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.pg-btn {
+  height: 35px;
+  padding: 0 10px; 
+  margin: 1px;
+  border-radius: 5px;
+  background: #ddd;
+  appearance: none;
+  border:#ddd ;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.pg-btn:hover:not([class$="active"]){
+  background-color: #ccc;
+}
+
+.pg-btn:not([class$="-page"]){
+width:35px;
+}
+
+.pg-btn[class$="-page"] {
+  background: #ccc;
+  font-weight: bold;
+}
+
+.pg-btn:hover[class$="-page"]{
+  background-color: rgb(150, 148, 148);
+}
+
+.pg-btn.active {
+  background: #00B4CC;  /*----#717790-----*/
+  color:#fff;
+}
+
+.pg-btn[disabled] {
+  opacity: 0.3;
+ }
 /* -------------------------------------------------------- */
 
 
@@ -151,4 +203,6 @@
 }
 
 /* -------------------------------------------------------- */
+
+
 
