@@ -1,17 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?Muli&display=swap');
 
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:  'Muli', sans-serif;
+  font-family: 'Muli', sans-serif;
 }
 
-.header{
+.header {
   display: flex;
 }
 
-.nav-bar{
+.nav-bar {
   display: flex;
   height: 50px;
   margin-top: 20px;
@@ -19,17 +19,18 @@
 }
 
 /* ----------- styling book icon -----------  */
-.book-icon{
+.book-icon {
   height: 70px;
   width: 60px;
   margin-left: 10px;
   margin-right: 10px;
   margin-top: -10px;
 
-  border:none;
+  border: none;
   cursor: pointer;
   float: left;
 }
+
 /* -------------------------------------------------------- */
 
 
@@ -41,21 +42,22 @@
   margin-right: 10px;
   align-items: center;
   justify-content: center;
-  border:none;
+  border: none;
   border-radius: 24px;
   cursor: pointer;
-  font-size:16px;
+  font-size: 16px;
   transition: background 0.3s ease;
 
 }
 
-.home-icon:hover{
+.home-icon:hover {
   background-color: #00B4CC;
 }
+
 /* -------------------------------------------------------- */
 
 /* ----------- styling search bar -----------  */
-.search-box{
+.search-box {
   background: #efefef;
   display: flex;
   flex-grow: 1;
@@ -69,38 +71,39 @@
   border: none;
 
 }
-  
+
 
 .search-input {
   background-color: transparent;
-  border:none;
+  border: none;
   display: flex;
   flex-grow: 2;
   background: none;
-  width:100%;
+  width: 100%;
   margin-left: 5px;
-  font-size:16px;
+  font-size: 16px;
   border-radius: 50px;
   padding-left: 15px;
 }
 
 
 .search-button {
-    width: 40px;
-    height: 100%;
-    border: 1px solid #00B4CC;
-    background: #00B4CC;
-    text-align: center;
-    color: #fff;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 16px;
+  width: 40px;
+  height: 100%;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
 }
+
 /* -------------------------------------------------------- */
 
 
 /* ----------- styling login & favorites button ----------- */
-.btn-group  {
+.btn-group {
   display: inline-block;
   cursor: pointer;
 }
@@ -112,15 +115,15 @@
   justify-content: center;
   margin-left: 10px;
   margin-right: 10px;
-  border:none;
+  border: none;
   border-radius: 24px;
   cursor: pointer;
-  font-size:16px;
+  font-size: 16px;
   transition: background 0.3s ease;
 
 }
 
-.login-button:hover{
+.login-button:hover {
   background-color: #00B4CC;
 }
 
@@ -131,30 +134,32 @@
   justify-content: center;
   margin-left: 10px;
   margin-right: 15px;
-  border:none;
+  border: none;
   border-radius: 24px;
   cursor: pointer;
-  font-size:16px;
+  font-size: 16px;
   transition: background 0.3s ease;
 
 }
 
-.favorites-button:hover{
+.favorites-button:hover {
   background-color: #00B4CC;
 }
+
 /* -------------------------------------------------------- */
 
 
 /* ----------- styling search results message ----------- */
-.search-results-message{
-  margin-top:10px;
+.search-results-message {
+  margin-top: 10px;
   padding-left: 245px;
-  font-size:12px;
+  font-size: 12px;
 }
+
 /* -------------------------------------------------------- */
 
 /* ----------- styling pagination ----------- */
-.pagination-buttons{
+.pagination-buttons {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -163,27 +168,27 @@
   margin: 10px;
   margin-top: 50px;
   padding: 30px;
-  
+
 }
 
 .pg-btn {
   height: 35px;
-  padding: 0 10px; 
+  padding: 0 10px;
   margin: 1px;
   border-radius: 5px;
   background: #ddd;
   appearance: none;
-  border:#ddd ;
+  border: #ddd;
   cursor: pointer;
   transition: background 0.3s ease;
 }
 
-.pg-btn:hover:not([class$="active"]){
+.pg-btn:hover:not([class$="active"]) {
   background-color: #ccc;
 }
 
-.pg-btn:not([class$="-page"]){
-width:35px;
+.pg-btn:not([class$="-page"]) {
+  width: 35px;
 }
 
 .pg-btn[class$="-page"] {
@@ -191,25 +196,27 @@ width:35px;
   font-weight: bold;
 }
 
-.pg-btn:hover[class$="-page"]{
+.pg-btn:hover[class$="-page"] {
   background-color: rgb(150, 148, 148);
 }
 
 .pg-btn.active {
-  background: #00B4CC;  /*----#717790-----*/
-  color:#fff;
+  background: #00B4CC;
+  /*----#717790-----*/
+  color: #fff;
 }
 
 .pg-btn[disabled] {
   opacity: 0.3;
- }
+}
+
 /* -------------------------------------------------------- */
 
 
 /* ----------- styling login page ----------- */
 /*  note need to fix login html  */
 
-.login{
+.login {
   margin-left: 400px;
   margin-right: 500px;
   align-items: center;
@@ -218,5 +225,80 @@ width:35px;
 
 /* -------------------------------------------------------- */
 
+/* ----------- grid container ----------- */
+.searchResultGridContainer {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 100px;
+  grid-gap: 20px;
+
+}
+
+/* formats search results into grid */
+#showData {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-auto-rows: auto;
+  grid-gap: 20px;
+
+}
+
+.grid-element {
+  /* background-color: cornflowerblue; */
+  display: grid;
+  position: relative;
+  width: 180px;
+  height: 180px;
+}
+
+.searchResultImage {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* The overlay is the info/text that pops up */
+.overlay {
+  position: absolute;
+  top: auto;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, .6);
+  color: #fff;
+  font-size: xx-small;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
 
 
+}
+
+/* animation */
+.overlay>* {
+  transform: translateY(20px);
+  transition: transform 0.25s;
+}
+
+.overlay:hover>* {
+  transform: translatey(0);
+}
+
+.overlay:hover {
+  opacity: 1;
+
+
+}
+
+/* overlay text formating */
+#title {
+  font-size: 3em;
+  font-weight: bold;
+}
+
+#authors {
+  font-size: 2.25em;
+}
