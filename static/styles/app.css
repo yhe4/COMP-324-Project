@@ -228,18 +228,21 @@
 /* ----------- grid container ----------- */
 .searchResultGridContainer {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-template-rows: 100px;
   grid-gap: 20px;
+  padding: 30px;
 
 }
 
 /* formats search results into grid */
 #showData {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: auto;
   grid-gap: 20px;
+  padding-left: 100px;
+  padding-right: 70px;
 
 }
 
@@ -247,8 +250,8 @@
   /* background-color: cornflowerblue; */
   display: grid;
   position: relative;
-  width: 180px;
-  height: 180px;
+  width: 220px;
+  height: 260px;
 }
 
 .searchResultImage {
