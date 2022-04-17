@@ -3,8 +3,8 @@ var qsearch;
 var apiKey = '&key=' + config.api_key;
 var apiURL = "https://www.googleapis.com/books/v1/volumes?q=";
 var type = '&Type=books'
-var maxResults = "&maxResults=" + 20;
-var resultsPerPage = 20;
+var maxResults = "&maxResults=" + 40;
+var resultsPerPage = 40;
 var _totalResults = 0;
 
 
@@ -15,7 +15,7 @@ function SearchBooks(currPage) {
         divContainer.innerHTML = "No search text found, please try again";    //warning message 
     }
     else {
-        var Index = 20 + (20 * (currPage - 2));
+        var Index = 40 + (40 * (currPage - 2));
         var startIndex = "&startIndex=" + Index;
         let xmlhttp = new XMLHttpRequest();                                 //create new request using xmlhttp library 
         var url = `${apiURL}${qsearch}${type}${maxResults}${startIndex}${apiKey}`;        //append url, qsearch, and key for full request url 
@@ -42,7 +42,7 @@ function showContent(currPage, data, Index) {
 
     if (data.items.length > 0)                                                    //check to see if response object contains any response aka books 
     {
-        divSearchResults.innerHTML = `Showing ${Index + 1} - ${Index + 20} of ${data.totalItems} results for <b>${qsearch}</b>`; //display number of results returned, total items is sent back to current document 
+        divSearchResults.innerHTML = `Showing ${Index + 1} - ${Index + 40} of ${data.totalItems} results for <b>${qsearch}</b>`; //display number of results returned, total items is sent back to current document 
         data.items.forEach(function (element) {                                                    //for every item (book) in response object (for loop)
 
             let temp = document.getElementsByTagName("template")[0];
