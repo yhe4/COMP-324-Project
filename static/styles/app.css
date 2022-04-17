@@ -152,6 +152,7 @@
 /* ----------- styling search results message ----------- */
 .search-results-message {
   margin-top: 10px;
+  margin-bottom: 30px;
   padding-left: 245px;
   font-size: 12px;
 }
