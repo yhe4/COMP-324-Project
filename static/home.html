@@ -34,12 +34,17 @@
 
             <div class=" btn-group">
                 <button class="login-button" onclick="window.location.href='login.html';">Login</button>
-                <button class="favorites-button" onclick="window.location.href='bookshelf.html';">Bookshelf</button>
+                <button class="bookshelf-button" onclick="window.location.href='bookshelf.html';">Bookshelf</button>
             </div>
 
 
         </div>
     </header>
+    <a id="top"></a>
+    <!--content here-->
+
+    <!-- filler for home page -->
+
 
     <div id="searchResultsText" class="search-results-message"></div>
     <div id="showData" class="wrap"></div>
@@ -47,32 +52,20 @@
 
     <template>
         <div class="grid-element">
-            <div class="searchResultImage" width="220px"><img id="thumbnail" height="260" width="220"></img></div>
-            <div class="overlay">
-                <div id="title"></div>
-                <div id="authors"></div>
-                <div id="publisher"></div>
-                <div id="publisheddate"></div>
-                <button id="addToButton" type="button" onclick="addTo()">love</button>
-            </div>
-        </div>
-
-
-        <!-- <div class="booktitles">
-            <div class="entry">//
-                <img id="thumbnail" width="200px" height="250px" class="bookcover">
-                <p>
-                    <br />
-                    <span id="title" class="bookdetail"></span>
-                    <span id="authors" class="bookdetail"></span>
-                    <span id="publisher" class="bookdetail"></span>
-                    <span id="publisheddate" class="bookdetail"></span>
-                </p>
-            </div> -->
+                <div class="searchResultImage" width="220px"><img id="thumbnail" height="260" width="220"></img></div>
+                <div class="overlay">
+                    <div id="title"></div>
+                    <div id="authors"></div>
+                    <div id="publisher"></div>
+                    <div id="publisheddate"></div>
+                    <button id="addToButton" type="button" onclick="addTo()">love</button>
+                </div>
         </div>
     </template>
-
-
+    
+    <footer>
+        <a href="#top"></a>
+    </footer>
 </body>
 
 </html>

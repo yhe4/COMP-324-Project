@@ -129,6 +129,7 @@ function pagination(currpage, searchResultsCount) {
             pgbutton.classList.add('active');
 
         divpaginationBar.appendChild(pgbutton);
+        window.scrollTo(0, 0);
     })
 
 }
