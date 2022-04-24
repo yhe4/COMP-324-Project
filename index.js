@@ -41,7 +41,7 @@ app.get('/', function(req, res) {
 });
 
 
-//Post New User to DB
+//Post New User to DB & Sign In 
 app.post('/signup', function(req,res){
   let new_user_info = {
     fname: req.body.fname,
@@ -54,9 +54,18 @@ app.post('/signup', function(req,res){
   
   client.db("booksDB").collection("booksCL").insertOne(new_user_info);
   
-  return res.redirect('home.html');
+  return res.redirect('login.html');
 })
 
+//Get User Info and Log In 
+app.get('/login', function(req,res){
+  let username = req.body.username
+  let password = req.body.password
+
+  client.db("booksDB").collection("booksCL").findOne({username: req.body.username});
+
+  return res.redirect('home.html');
+})
 
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
