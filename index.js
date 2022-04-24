@@ -1,22 +1,3 @@
-//server using only Node 
-
-//const http = require('http');
-//const nStatic = require('node-static');
-
-
-
-//const fileServer = new nStatic.Server('./static');
-
-//http.createServer(function (req, res) {
-    
-    //fileServer.serve(req, res);
-
-//}).listen(3000);
-
-
-//server using Express
-
-
 const express = require('express');
 const path = require('path');
 
@@ -41,7 +22,7 @@ app.get('/', function(req, res) {
 });
 
 
-//Post New User to DB & Sign In 
+//Add New User to DB & Sign In 
 app.post('/signup', function(req,res){
   let new_user_info = {
     fname: req.body.fname,
@@ -57,15 +38,52 @@ app.post('/signup', function(req,res){
   return res.redirect('login.html');
 })
 
-//Get User Info and Log In 
-app.get('/login', function(req,res){
-  let username = req.body.username
-  let password = req.body.password
+//Retrieve User Info and Log In 
+app.post('/login', function(req,res){
+  let username = req.body.username;
+  let password = req.body.password;
 
-  client.db("booksDB").collection("booksCL").findOne({username: req.body.username});
+  client.db("booksDB").collection("booksCL").findOne({username: username, password:password})
+  .then(result => {
+    if(result) {
+      console.log(`Successfully found document: ${result._id}, ${result.username},${result.password}`);
+    } else {
+      console.log("No document matches the provided query.");
+    }
+    return result;
+  })
+  .catch(err => console.error(`Failed to find document: ${err}`));
 
   return res.redirect('home.html');
 })
+
+
+
+//Add Book to Bookshelf 
+app.post('/addBook', function(req,res){
+  //check if bookshelf array is null 
+  //if so insert new book 
+ 
+  let book = {
+    user_bookshelf: [{
+      type: Object,
+      title: req.body.title,
+      authors: req.body.authors,
+      publisher: req.body.publisher,
+      publisheddate: req.body.publisheddate,
+    }]
+  }
+  console.log(user_bookshelf)
+  query = { "Object_id": id }
+
+  client.db("booksDB").collection("booksCL").findOneAndUpdate(query,
+    
+    { $push: book }
+  );
+  
+})
+
+//Retrieve User's Book from db to Bookshelf
 
 app.listen(port);
 console.log('Server started at http://localhost:' + port);

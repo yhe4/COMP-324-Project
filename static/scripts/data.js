@@ -54,6 +54,21 @@ function showContent(currPage, data, Index) {
             clon.getElementById("publisheddate").innerHTML = `Published Date/Year: ${element.volumeInfo.publishedDate}`;
             if (element.volumeInfo.imageLinks != undefined)
                 clon.getElementById("thumbnail").src = element.volumeInfo.imageLinks.thumbnail;
+            
+            clon.getElementById("addBook").onclick = function() {
+
+                let book={
+                    id:element.id,
+                    Title:element.volumeInfo.title,
+                    Author:(element.volumeInfo.authors != undefined) ? element.volumeInfo.authors.join(): "" ,
+                    Publisher:element.volumeInfo.publisher,
+                    PublishedDate:element.volumeInfo.publishedDate,
+                    thumbnail: (element.volumeInfo.imageLinks != undefined) ? element.volumeInfo.imageLinks.thumbnail : ""
+                }
+
+                addBooks(book)
+               
+        }
 
             divContainer.appendChild(clon);
         })
@@ -133,3 +148,8 @@ function pagination(currpage, searchResultsCount) {
     })
 
 }
+
+function addBooks(book) {
+
+}
+
