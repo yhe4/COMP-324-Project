@@ -54,8 +54,6 @@ function showContent(currPage, data, Index) {
             clon.getElementById("publisheddate").innerHTML = `Published Date/Year: ${element.volumeInfo.publishedDate}`;
             if (element.volumeInfo.imageLinks != undefined)
                 clon.getElementById("thumbnail").src = element.volumeInfo.imageLinks.thumbnail;
-            
-            clon.getElementById("addBook").onclick = function() {
 
                 let book={
                     id:element.id,
@@ -65,10 +63,10 @@ function showContent(currPage, data, Index) {
                     PublishedDate:element.volumeInfo.publishedDate,
                     thumbnail: (element.volumeInfo.imageLinks != undefined) ? element.volumeInfo.imageLinks.thumbnail : ""
                 }
-
-                addBooks(book)
-               
-        }
+            
+            clon.getElementById("addBook").onclick = function() {
+                addToBookshelf(book)
+            }
 
             divContainer.appendChild(clon);
         })
@@ -149,7 +147,26 @@ function pagination(currpage, searchResultsCount) {
 
 }
 
-function addBooks(book) {
+function addToBookshelf(book){
+    if (book.id == "") {                                             //user input validation: if search was empty (submit button was pressed without query)     
+         // todo: show message to user
+    }
+    else {
+        
+       
+        let xmlhttp = new XMLHttpRequest();                                 //create new request using xmlhttp library 
+        var url = 'addbook';        //append url, qsearch, and key for full request url 
+
+        xmlhttp.open("Post", url, true);  
+        xmlhttp.setRequestHeader("Content-type", "application/json");
+        xmlhttp.send(JSON.stringify(book));                                          //send request to api
+
+        xmlhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200) {               //anonymous function: when request is made + response is returned and if http return status is successful
+                var data = JSON.parse(this.responseText);                  //then take returned JSON data, parse and store in object 
+               console.log(data);                                       //pass object containing parsed JSON response to showContent function 
+            }
+        };
+    }
 
 }
-

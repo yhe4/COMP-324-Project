@@ -1,13 +1,30 @@
 const express = require('express');
 const path = require('path');
+const cookieParser = require('cookie-parser');
+const sessions = require('express-session');
 
 const app = express();
 const port = 3000;
 
 //Connecting to mongodb's atlas cluster 
 const {MongoClient} = require('mongodb');
+var ObjectId = require('mongodb').ObjectId;
 const bodyParser =  require("body-parser");
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.json());    
+
+
+//connect user session 
+app.use(cookieParser());                  //tell app to use cookies 
+const oneDay = 1000 * 60 * 60 * 24;      //set cookie expiration to 24 hours 
+      app.use(sessions({
+          secret: "cookiemonsterfjs792ghed",    //encrypt cookie 
+          saveUninitialized:true,
+          cookie: { maxAge: oneDay },
+          resave: false 
+      }));
+
+
 
  //instance of mongo client with mongodb connection string 
  const uri = 'mongodb+srv://adminsp22:adminsp22@bookshelfcluster.ru5tu.mongodb.net/booksDB?retryWrites=true&w=majority';
@@ -30,7 +47,7 @@ app.post('/signup', function(req,res){
     email: req.body.email,
     username: req.body.username,
     password: req.body.password,
-    user_bookshelf: Array[null]
+    user_bookshelf: []
   }
   
   client.db("booksDB").collection("booksCL").insertOne(new_user_info);
@@ -47,6 +64,14 @@ app.post('/login', function(req,res){
   .then(result => {
     if(result) {
       console.log(`Successfully found document: ${result._id}, ${result.username},${result.password}`);
+      let session = req.session;
+      session.userid = result._id //log in and save db id as user session id 
+      req.session.save(function(err) {
+        if(err){
+          res.end("error occurred while saving session: " + err)
+          return;
+        }
+      })
     } else {
       console.log("No document matches the provided query.");
     }
@@ -55,6 +80,8 @@ app.post('/login', function(req,res){
   .catch(err => console.error(`Failed to find document: ${err}`));
 
   return res.redirect('home.html');
+
+
 })
 
 
@@ -63,27 +90,34 @@ app.post('/login', function(req,res){
 app.post('/addBook', function(req,res){
   //check if bookshelf array is null 
   //if so insert new book 
- 
-  let book = {
-    user_bookshelf: [{
-      type: Object,
-      title: req.body.title,
-      authors: req.body.authors,
-      publisher: req.body.publisher,
-      publisheddate: req.body.publisheddate,
-    }]
-  }
-  console.log(user_bookshelf)
-  query = { "Object_id": id }
+  console.log(req.body);
 
-  client.db("booksDB").collection("booksCL").findOneAndUpdate(query,
-    
-    { $push: book }
-  );
-  
+  let book = req.body 
+
+  let session = req.session; //get session user id/db id 
+
+  if(session.userid){
+    console.log("user found");
+  }
+
+  console.log("pringting user id")
+  console.log(session.userid)
+
+  const userid = session.userid
+  const filter = { "_id": ObjectId(userid)};
+
+  const updateDoc = {
+    $push: {
+      user_bookshelf: book
+    }
+  };
+
+  client.db("booksDB").collection("booksCL").updateOne(filter, updateDoc);
+
 })
 
 //Retrieve User's Book from db to Bookshelf
+
 
 app.listen(port);
 console.log('Server started at http://localhost:' + port);
