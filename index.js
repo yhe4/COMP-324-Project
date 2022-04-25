@@ -86,37 +86,37 @@ app.post('/login', function(req,res){
 
 
 
-//Add Book to Bookshelf 
-app.post('/addBook', function(req,res){
-  //check if bookshelf array is null 
-  //if so insert new book 
-  console.log(req.body);
+//Add Book to Bookshelf - Did not work - Books are now added in bookShelf.js w/o mongodb
+// app.post('/addBook', function(req,res){
+//   //check if bookshelf array is null 
+//   //if so insert new book 
+//   console.log(req.body);
 
-  let book = req.body 
+//   let book = req.body 
 
-  let session = req.session; //get session user id/db id 
+//   let session = req.session; //get session user id/db id 
 
-  if(session.userid){
-    console.log("user found");
-  }
+//   if(session.userid){
+//     console.log("user found");
+//   }
 
-  console.log("pringting user id")
-  console.log(session.userid)
+//   console.log("pringting user id")
+//   console.log(session.userid)
 
-  const userid = session.userid
-  const filter = { "_id": ObjectId(userid)};
+//   const userid = session.userid
+//   const filter = { "_id": ObjectId(userid)};
 
-  const updateDoc = {
-    $push: {
-      user_bookshelf: book
-    }
-  };
+//   const updateDoc = {
+//     $push: {
+//       user_bookshelf: book
+//     }
+//   };
 
-  client.db("booksDB").collection("booksCL").updateOne(filter, updateDoc);
+//   client.db("booksDB").collection("booksCL").updateOne(filter, updateDoc);
 
-})
+// })
 
-//Retrieve User's Book from db to Bookshelf
+//Retrieve User's Book from db to Bookshelf - Books are now removed in bookShelf.js w/o mongodb
 
 
 app.listen(port);
