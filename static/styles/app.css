@@ -114,8 +114,8 @@
   min-width: 123px;
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
-  margin-right: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
   border: none;
   border-radius: 24px;
   cursor: pointer;
@@ -124,9 +124,7 @@
 
 }
 
-.login-button:hover {
-  background-color: #00B4CC;
-}
+
 
 .bookshelf-button {
   height: 48px;
@@ -224,8 +222,8 @@
   justify-content: center;
 }
 
-.login-sumit{
-  margin-left:100px;
+.login-submit{
+  margin-top:60px;
 }
 
 /* -------------------------------------------------------- */
@@ -370,7 +368,7 @@
   font-size: 40px;
 }
 
-.form-container {
+.form-container-signup {
   width: 600px;
   height: 600px;
   box-shadow: 0 10px 15px rgba(179, 179, 179, 0.7);
@@ -381,11 +379,28 @@
   border-radius: 10px;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  /*justify-content: space-evenly;*/
   padding: 15px;
   background-color: #00B4CC;
+  text-align: center;
 }
 
+.form-container-login {
+  width: 600px;
+  height: 400px;
+  box-shadow: 0 10px 15px rgba(179, 179, 179, 0.7);
+  position: absolute;
+  top: 50%;
+  left: 70%;
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  /*justify-content: space-evenly;*/
+  padding: 15px;
+  background-color: #00B4CC;
+  text-align: center;
+}
 
 
 
@@ -396,13 +411,13 @@
   width: 380px;
   font-size: 14px;
   border-radius: 35px;
-  margin-left: 120px;
   margin-right: 10px;
   padding-left: 10px;
   margin-top: 50px;
 } 
 
 .input {
+  text-align: center;
   position: relative;
   width: 100%;
   height: 50px;
@@ -414,9 +429,11 @@
 .signup-button {
   height: 48px;
   min-width: 123px;
+  width: 250px;
   align-items: center;
   justify-content: center;
-  margin-left: 10px;
+  margin-top:55px;
+  margin-left: 171px;
   margin-right: 10px;
   border: none;
   border-radius: 24px;
@@ -431,12 +448,16 @@
 }
 
 .signup-text{
-  margin-left: 140px;
+text-align: center;
   margin-top: 30px;
   color: #fff;
   font-size: 40px;
 
 }
+
+.login-submit .login-button:hover{
+    background-color: #ffffff;
+  }
 
 
 /* -------------------------------------------------------- */

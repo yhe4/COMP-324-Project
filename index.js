@@ -35,7 +35,7 @@ const oneDay = 1000 * 60 * 60 * 24;      //set cookie expiration to 24 hours
 // sendFile will go here
 app.get('/', function(req, res) {
   app.use(express.static(path.join(__dirname, '/static')))
-  res.sendFile(path.join(__dirname, '/static/home.html'));
+  res.sendFile(path.join(__dirname, '/static/login.html'));
 });
 
 
