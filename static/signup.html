@@ -10,7 +10,6 @@
 </head>
 
 <body>
-
 <div class = "signup-message">
     <h2 class = "browse-text"> Browse on Bookshelf </h2>
     <a href="login.html" title="book-icon"><img src="images/book-icon1.jpeg" class="book"></a>
@@ -19,43 +18,14 @@
 <form action="/signup" method="post">
     <div class= "form-container-signup"> 
         <h2 class="signup-text">Create Account </h2>
-
-        <div class="input">
-            <div class="sign-up-input">
-                <input type="text" name="fname" id="newUser-fname" placeholder="first name">
-            </div>
-        </div>
-        
-        <div class="input">
-            <div class="sign-up-input">
-                <input type="text" name="lname" id="newUser-lname" placeholder="last name">
-            </div>
-        </div>
-
-
-        <div class="input">
-            <div class="sign-up-input">
-                <input type="text" name="email" id="newUser-email" placeholder="email">
-            </div>
-        </div>
-
-        <div class="input">
-            <div class="sign-up-input">
-                <input type="text" name="username" id="newUser-username" placeholder="username">
-            </div>
-        </div>
-            
-        <div class="input">
-            <div class="sign-up-input">
-                <input type="password" name="password" id="newUser-password" placeholder="password">
-            </div>
-        </div>
-        
+        <input type="text" name="fname" id="newUser-fname" placeholder="first name" class="sign-up-input">
+        <input type="text" name="lname" id="newUser-lname" placeholder="last name" class="sign-up-input">
+        <input type="text" name="email" id="newUser-email" placeholder="email" class="sign-up-input">
+        <input type="text" name="username" id="newUser-username" placeholder="username" class="sign-up-input">
+        <input type="password" name="password" id="newUser-password" placeholder="password" class="sign-up-input">
+       
         <button class="signup-button" type="submit" name="signup-button" id="signup-button"> Sign Up</button>
-
     </div> 
 </form>
-    
 </body>
-
 </html>
