@@ -213,7 +213,6 @@
 
 
 /* ----------- styling login page ----------- */
-/*  note need to fix login html  */
 
 .login {
   margin-left: 400px;
@@ -224,6 +223,10 @@
 
 .login-submit{
   margin-top:50px;
+}
+
+.login-submit .login-button:hover{
+  background-color: #fff;
 }
 
 /* -------------------------------------------------------- */
