@@ -5,20 +5,41 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/app.css">
     <title>Bookshelf</title>
 </head>
 
 <body>
-<ul>
-    <li>Page for users saved books or "favorite books" </li>
-    <li>add user functionality where they can click on a book after search on home page and save it to book shelf 
-        to view it on the bookshelf page later, also remove -- javascript ??" </li>
-    <li>have books show up in a grid fashion - html/css" </li>
-    <li>if we have time - which idk if we will - have UI where user can click and drag book to order them "fluid" </li>
+    <header>
+        <div class = nav-bar>
+            <div class=" btn-group">
+                <button class="home-icon" type="submit" name="home-icon" id = "home-icon">Home</button>
+                <button class="login-button" onclick="window.location.href='Home.html';">Search</button>
+            </div>
+        </div>
+    </header>
+    <div id="searchResultsText" class="searchResultsMsg"></div>
+    <div id="showData" class="wrap"></div>
 
 
-</ul>
+    <template>
+        <div class="grid-element">
+                <div class="searchResultImage" width="220px"><img id="thumbnail" height="260" width="220"></img></div>
+                <div class="overlay">
+                    <div name="title" id="title"></div>
+                    <div name="authors" id="authors"></div>
+                    <div name="publisher" id="publisher"></div>
+                    <div name="publisheddate" id="publisheddate"></div>
+                    <button id="addBook" class ="addbook-button">
+                        <i class="fa fa-heart"></i>
+                    </button>
+
+                </div>
+        </div>
+    </template>
+    
+    <script src="scripts/bookShelf.js"></script>
 </body>
 
 </html>

@@ -65,7 +65,8 @@ function showContent(currPage, data, Index) {
                 }
             
             clon.getElementById("addBook").onclick = function() {
-                addToBookshelf(book)
+                //addToBookshelf(book)
+                AddToBookShelfStorage(book);
             }
 
             divContainer.appendChild(clon);
@@ -170,4 +171,26 @@ function addToBookshelf(book){
     }
 
 }
+
+function AddToBookShelfStorage (Favbook){
+
+    let Bookstorage = localStorage.getItem("BookShelf");
+    if (Bookstorage == null) {
+    
+        let books=[]
+        books.push(Favbook)
+        localStorage.setItem("BookShelf", JSON.stringify(books));
+    }else{
+        let books = JSON.parse(Bookstorage)
+
+        const index = books.findIndex(object => object.id === Favbook.id);
+        if (index === -1) {
+            books.push(Favbook);
+            localStorage.setItem("BookShelf", JSON.stringify(books));
+        }
+
+    }
+    
+  }
+
 
