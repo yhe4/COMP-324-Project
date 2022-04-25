@@ -12,48 +12,46 @@
 <body>
 
 <div class = "signup-message">
+    <h2 class = "browse-text"> Browse on Bookshelf </h2>
     <a href="login.html" title="book-icon"><img src="images/book-icon1.jpeg" class="book"></a>
-    <h2> Browse on Bookshelf </h2>
 </div>
 
 <form action="/signup" method="post">
     <div class= "form-container"> 
+        <h2 class="signup-text">Create Account </h2>
+
         <div class="input">
-            <label for="fname"><b>First Name</b></label>
             <div class="sign-up-input">
                 <input type="text" name="fname" id="newUser-fname" placeholder="first name">
             </div>
         </div>
         
         <div class="input">
-            <label for="lname"><b>Last Name</b></label>
             <div class="sign-up-input">
                 <input type="text" name="lname" id="newUser-lname" placeholder="last name">
             </div>
         </div>
 
+
         <div class="input">
-            <label for="email"><b>Email</b></label>
             <div class="sign-up-input">
                 <input type="text" name="email" id="newUser-email" placeholder="email">
             </div>
         </div>
 
         <div class="input">
-            <label for="username"><b>Username</b></label>
             <div class="sign-up-input">
-                <input type="text" name="username" id="newUser-username" placeholder="first name">
+                <input type="text" name="username" id="newUser-username" placeholder="username">
             </div>
         </div>
             
         <div class="input">
-            <label for="password"><b>Password</b></label>
             <div class="sign-up-input">
                 <input type="password" name="password" id="newUser-password" placeholder="password">
             </div>
         </div>
         
-        <button class="login-button" type="submit" name="search-button" id="search-button"> Sign Up</button>
+        <button class="signup-button" type="submit" name="signup-button" id="signup-button"> Sign Up</button>
 
     </div> 
 </form>

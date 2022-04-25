@@ -143,7 +143,7 @@
 
 }
 
-.favorites-button:hover {
+.bookshelf-button:hover {
   background-color: #00B4CC;
 }
 
@@ -222,6 +222,10 @@
   margin-right: 500px;
   align-items: center;
   justify-content: center;
+}
+
+.login-sumit{
+  margin-left:100px;
 }
 
 /* -------------------------------------------------------- */
@@ -346,11 +350,12 @@
 
 .signup-message{
   padding: 30px;
-  margin-left: 100px;
-  margin-top: 100px;
-  
+  margin-left: 80px;
+  margin-top: 50px;
+}
 
-
+.signup-message .book{
+  margin-left: 120px;
 }
 
 .book{
@@ -360,9 +365,14 @@
   width: 160px;
 }
 
+.browse-text{
+  color: rgb(0, 0, 0);
+  font-size: 40px;
+}
+
 .form-container {
-  width: 500px;
-  height: 500px;
+  width: 600px;
+  height: 600px;
   box-shadow: 0 10px 15px rgba(179, 179, 179, 0.7);
   position: absolute;
   top: 50%;
@@ -374,35 +384,40 @@
   justify-content: space-evenly;
   padding: 15px;
   background-color: #00B4CC;
-  transition: background 0.3s ease;
 }
+
+
+
 
 .sign-up-input input{
   background-color: #efefef;
   border: none;
   height: 50px;
-  width: 360px;
+  width: 380px;
   font-size: 14px;
   border-radius: 35px;
-  margin-left: 50px;
+  margin-left: 120px;
   margin-right: 10px;
-  padding-left:10px;
+  padding-left: 10px;
+  margin-top: 50px;
 } 
 
 .input {
   position: relative;
   width: 100%;
   height: 50px;
-  margin-bottom: 0.7em;
+  margin-bottom: 10px;
+  margin-top: 5px;
 }
 
 
 .signup-button {
   height: 48px;
-  min-width: 100px;
+  min-width: 123px;
   align-items: center;
   justify-content: center;
-  margin: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
   border: none;
   border-radius: 24px;
   cursor: pointer;
@@ -412,14 +427,16 @@
 }
 
 .signup-button:hover {
-  background-color: #00B4CC;
+  background-color: #ffffff;
 }
 
-.input label {
-  font-size: 14px;
-  color: #ffffff;
-  margin-left: 55px;
-  
+.signup-text{
+  margin-left: 140px;
+  margin-top: 30px;
+  color: #fff;
+  font-size: 40px;
+
 }
+
 
 /* -------------------------------------------------------- */

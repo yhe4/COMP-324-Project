@@ -10,30 +10,36 @@
 </head>
 
 <body>
-    <header>
-        <ul>
-            <li>Page for logging in" </li>
-            <li> point is so that bookshelf is saved for a particular user incase they logout </li>
-            <li>"there seems to be a way to log in with google with the api - maybe we can do this" </li>
-            <li>"first steps: fix login with html/css" </li>
-        </ul>
 
-    </header>
-    <div class="login">
-        <form action="/login" method="post" class="">
-            <div class="login-form">
-                <label for="name"> Enter your username: </label>
-                <input type="text" name="username" id="username" required>
+
+<div class = "signup-message">
+    <h2 class = "browse-text"> Browse on Bookshelf </h2>
+    <a title="book-icon"><img src="images/book-icon1.jpeg" class="book"></a>
+</div>
+    <form action="/login" method="post">
+        <div class= "form-container"> 
+            <h2 class="signup-text">Log In</h2>
+    
+            <div class="input">
+                <div class="sign-up-input">
+                    <input type="text" name="username" id="username" placeword="username" required>
+                </div>
             </div>
-            <div class="form-example">
-                <label for="name">Enter your password: </label>
-                <input type="password" name="password" id="password" required>
+            
+            <div class="input">
+                <div class="sign-up-input">
+                    <input type="password" name="password" id="password" placeholder= "password" required>
+                </div>
             </div>
+
             <div class="login-submit">
                 <input class = login-button type="submit" value= "log in">
+                <button class = login-button onclick="window.location.href='signup.html';">sign up</button>
             </div>
-        </form>
-        <button class = login-button onclick="window.location.href='signup.html';">sign up</button>
+   
+            </div>    
+        </div> 
+    </form>
     </div>
 </body>
 
