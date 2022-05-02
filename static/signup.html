@@ -2,29 +2,31 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> //tells browser what character set to use//
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> //how to render page in the browser, tells browser to set width of our page to dervices width
+    and to not zoom into or out of page//
+    //set initial scale to 1//
     <link rel="stylesheet" href="styles/app.css">
     <script type='text/javascript' src='scripts/connection.js'></script>
 </head>
 
 <body>
 <div class = "signup-message">
-    <h2 class = "browse-text"> Browse on Bookshelf </h2>
+    <h2 class = "browse-text"> Browse on Bookshelf </h2> //creates the header  Browse on Bookshelf// 
     <a href="login.html" title="book-icon"><img src="images/book-icon1.jpeg" class="book"></a>
 </div>
 
-<form action="/signup" method="post">
+<form action="/signup" method="post"> // form to sign up// 
     <div class= "form-container-signup"> 
-        <h2 class="signup-text">Create Account </h2>
-        <input type="text" name="fname" id="newUser-fname" placeholder="first name" class="sign-up-input">
-        <input type="text" name="lname" id="newUser-lname" placeholder="last name" class="sign-up-input">
-        <input type="text" name="email" id="newUser-email" placeholder="email" class="sign-up-input">
-        <input type="text" name="username" id="newUser-username" placeholder="username" class="sign-up-input">
-        <input type="password" name="password" id="newUser-password" placeholder="password" class="sign-up-input">
+        <h2 class="signup-text">Create Account </h2> //creates the header Create Account//
+        <input type="text" name="fname" id="newUser-fname" placeholder="first name" class="sign-up-input"> //allows user to put in first name to sign up//
+        <input type="text" name="lname" id="newUser-lname" placeholder="last name" class="sign-up-input"> // allows user to put in last name to sign up//
+        <input type="text" name="email" id="newUser-email" placeholder="email" class="sign-up-input"> //allows user to put in email//
+        <input type="text" name="username" id="newUser-username" placeholder="username" class="sign-up-input"> //allows user to create a username to sign up//
+        <input type="password" name="password" id="newUser-password" placeholder="password" class="sign-up-input"> //allows user to create a password to sign up//
        
-        <button class="signup-button" type="submit" name="signup-button" id="signup-button"> Sign Up</button>
+        <button class="signup-button" type="submit" name="signup-button" id="signup-button"> Sign Up</button> // this creates sign up button//
     </div> 
 </form>
 </body>
