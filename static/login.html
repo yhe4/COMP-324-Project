@@ -2,30 +2,33 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8"> //tells browser what character set to use//
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  //how to render page in the browser, tells browser to set width of our page to dervices width
+    and to not zoom into or out of page//
+    //set initial scale to 1//
     <link rel="stylesheet" href="styles/app.css">
-    <title>Log in</title>
+    <title>Log in</title> //tells the browser what title should be displayed in the top of browser//
 </head>
 
 <body>
 
 
 <div class = "signup-message">
-    <h2 class = "browse-text"> Browse on Bookshelf </h2>
-    <a title="book-icon"><img src="images/book-icon1.jpeg" class="book"></a>
+    <h2 class = "browse-text"> Browse on Bookshelf </h2> //creating the heading of Browse on Bookshelf//
+    <a title="book-icon"><img src="images/book-icon1.jpeg" class="book"></a> //adds in image of book logo//
 </div>
     <form action="/login" method="post">
         <div class= "form-container-login"> 
-            <h2 class="signup-text">Log In</h2>
+            <h2 class="signup-text">Log In</h2>  //creates heading of Log In//
     
-            <input class="sign-up-input" type="text" name="username" id="username" placeholder="username" required>
-            <input class="sign-up-input" type="password" name="password" id="password" placeholder= "password" required>
+            <input class="sign-up-input" type="text" name="username" id="username" placeholder="username" required> //allows user to put in username//
+            <input class="sign-up-input" type="password" name="password" id="password" placeholder= "password" required> //allow user to put in password//
 
-            <div class="login-submit">
+
+            <div class="login-submit"> //submit button//
                 <input class = login-button type="submit" value= "log in">
-                <button class = login-button onclick="window.location.href='signup.html';">sign up</button>
+                <button class = login-button onclick="window.location.href='signup.html';">sign up</button>  //creates sign-up button//
             </div>
    
             </div>    
